@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
-
-module carry_lookahead_adder_tb();
+//////////////////////////////////////////////////////////////////////////////////
+module w();
 
 reg  [31:0] A = 0;
 reg  [31:0] B = 0;
@@ -16,12 +16,12 @@ carry_lookahead_adder inst_0
     
 always begin
 
-    $display("A %d B %d Dif %d", A, B, A + B - S);
+    $display("A %d B %d Sum %d Diff %d", A, B, S, A + B - S);
 
-    A = $random;
-    B = {$random} % ( {32{1'b1}} - A );
+    A = $random >> 1;
+    B = $random >> 1;
+    
     #100;
 end
-
 
 endmodule

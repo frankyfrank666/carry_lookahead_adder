@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-module w();
+module carry_lookahead_adder_tb();
 
 reg  [31:0] A = 0;
 reg  [31:0] B = 0;
@@ -21,7 +21,7 @@ always begin
     A = $random >> 1;
     B = $random >> 1;
     
-    #100;
+    #10;
 end
 
 endmodule
